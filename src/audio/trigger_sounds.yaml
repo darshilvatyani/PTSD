@@ -1,0 +1,138 @@
+# PTSD Audio Trigger Configuration
+# Sounds detected by Google YAMNet mapped to PTSD trigger categories
+# YAMNet classifies 521 audio event classes
+# Reference: https://github.com/tensorflow/models/blob/master/research/audioset/yamnet/yamnet_class_map.csv
+
+# ============================================================
+# TRIGGER SOUNDS — Sounds that may cause PTSD episodes
+# ============================================================
+trigger_sounds:
+
+  # Gunfire / Explosions (War, violence trauma)
+  - name: "Gunshot, gunfire"
+    category: "violence"
+    risk_weight: 1.0
+    description: "Gunfire — severe trigger for combat/violence trauma"
+
+  - name: "Machine gun"
+    category: "violence"
+    risk_weight: 1.0
+
+  - name: "Explosion"
+    category: "violence"
+    risk_weight: 0.95
+
+  - name: "Fireworks"
+    category: "violence"
+    risk_weight: 0.7
+    description: "Can be mistaken for gunfire"
+
+  # Sirens / Emergency (Accident trauma)
+  - name: "Siren"
+    category: "emergency"
+    risk_weight: 0.8
+
+  - name: "Ambulance (siren)"
+    category: "emergency"
+    risk_weight: 0.8
+
+  - name: "Fire engine, fire truck (siren)"
+    category: "emergency"
+    risk_weight: 0.75
+
+  - name: "Police car (siren)"
+    category: "emergency"
+    risk_weight: 0.8
+
+  - name: "Civil defense siren"
+    category: "emergency"
+    risk_weight: 0.85
+
+  # Screaming / Shouting (Abuse, violence trauma)
+  - name: "Screaming"
+    category: "distress"
+    risk_weight: 0.9
+
+  - name: "Shout"
+    category: "distress"
+    risk_weight: 0.7
+
+  - name: "Yell"
+    category: "distress"
+    risk_weight: 0.65
+
+  - name: "Crying, sobbing"
+    category: "distress"
+    risk_weight: 0.6
+
+  - name: "Wail, moan"
+    category: "distress"
+    risk_weight: 0.55
+
+  # Breaking / Impact (Accident, abuse trauma)
+  - name: "Glass"
+    category: "impact"
+    risk_weight: 0.6
+
+  - name: "Shatter"
+    category: "impact"
+    risk_weight: 0.7
+
+  - name: "Breaking"
+    category: "impact"
+    risk_weight: 0.65
+
+  - name: "Crash"
+    category: "impact"
+    risk_weight: 0.7
+
+  # Alarms
+  - name: "Alarm"
+    category: "alarm"
+    risk_weight: 0.6
+
+  - name: "Car alarm"
+    category: "alarm"
+    risk_weight: 0.5
+
+  - name: "Fire alarm"
+    category: "alarm"
+    risk_weight: 0.65
+
+  - name: "Smoke detector, smoke alarm"
+    category: "alarm"
+    risk_weight: 0.6
+
+  # Weather (Natural disaster trauma)
+  - name: "Thunder"
+    category: "weather"
+    risk_weight: 0.5
+
+  - name: "Thunderstorm"
+    category: "weather"
+    risk_weight: 0.55
+
+# ============================================================
+# SAFE SOUNDS — Sounds that indicate calm environment
+# ============================================================
+safe_sounds:
+  - name: "Music"
+    calm_weight: 0.3
+
+  - name: "Bird"
+    calm_weight: 0.4
+
+  - name: "Bird vocalization, bird call, bird song"
+    calm_weight: 0.4
+
+  - name: "Singing"
+    calm_weight: 0.3
+
+  - name: "Laughter"
+    calm_weight: 0.35
+
+  - name: "Stream"
+    calm_weight: 0.4
+
+  - name: "Rain on surface"
+    calm_weight: 0.3

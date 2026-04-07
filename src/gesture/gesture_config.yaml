@@ -1,0 +1,60 @@
+# ============================================================
+# Gesture Detection Configuration for PTSD Trigger Detection
+# Uses MediaPipe Pose + Hands to detect stress-related gestures
+# ============================================================
+
+# Gestures that indicate PTSD triggers or distress
+trigger_gestures:
+  - name: "Fighting Stance"
+    description: "Fists raised, arms extended aggressively"
+    risk_weight: 0.9
+    category: "aggression"
+
+  - name: "Head Covering"
+    description: "Hands on/near head — distress signal"
+    risk_weight: 0.85
+    category: "distress"
+
+  - name: "Hand Rubbing"
+    description: "Both hands together, fidgeting — nervous gesture"
+    risk_weight: 0.5
+    category: "anxiety"
+
+  - name: "Defensive Posture"
+    description: "Arms crossed or shielding body"
+    risk_weight: 0.6
+    category: "defense"
+
+  - name: "Trembling"
+    description: "Rapid small movements in hand/body landmarks"
+    risk_weight: 0.1
+    category: "fear"
+
+  - name: "Crouching"
+    description: "Body hunched, shoulders raised — cowering"
+    risk_weight: 0.8
+    category: "fear"
+
+  - name: "Face Touching"
+    description: "Repeatedly touching face — anxiety indicator"
+    risk_weight: 0.4
+    category: "anxiety"
+
+# Calm / normal gestures (reduce risk score)
+safe_gestures:
+  - name: "Relaxed Posture"
+    description: "Arms at sides, shoulders relaxed"
+    calm_weight: 0.3
+
+  - name: "Open Palms"
+    description: "Hands open, palms visible — non-threatening"
+    calm_weight: 0.2
+
+# Detection thresholds
+thresholds:
+  hand_proximity: 0.08        # Normalized distance for "hands close together"
+  head_hand_proximity: 0.12   # Distance for "hands near head"
+  trembling_threshold: 0.015  # Movement delta for trembling detection
+  crossed_arms_angle: 45      # Elbow angle for crossed arms
+  crouch_ratio: 0.6           # Shoulder-to-hip ratio for crouching
+  min_confidence: 0.5         # Minimum pose detection confidence

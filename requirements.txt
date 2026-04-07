@@ -1,0 +1,34 @@
+# PTSD Trigger Detection System - Dependencies (Streamlit Cloud)
+
+# Computer Vision & Image Processing
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+
+# Emotion Detection (Pre-trained)
+deepface>=0.0.89
+tf-keras>=2.16.0
+
+# Object Detection (Pre-trained YOLOv8)
+ultralytics>=8.1.0
+
+# Audio Classification (Google YAMNet)
+tensorflow>=2.15.0
+tensorflow-hub>=0.16.0
+scipy>=1.11.0
+librosa>=0.10.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Dashboard
+streamlit>=1.30.0
+plotly>=5.18.0
+
+# Utilities
+pyyaml>=6.0.0
+
+# Gesture Detection
+mediapipe>=0.10.0

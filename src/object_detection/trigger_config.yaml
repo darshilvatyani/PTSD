@@ -1,0 +1,73 @@
+# PTSD Trigger Object Configuration
+# Objects detected by YOLOv8 (COCO dataset classes) mapped to PTSD trigger categories
+# Each entry has a risk_weight (0.0-1.0) indicating how much it contributes to PTSD risk
+
+# ============================================================
+# TRIGGER OBJECTS — Objects that may cause PTSD episodes
+# ============================================================
+trigger_objects:
+
+  # Weapons / Violence
+  - name: "knife"
+    category: "weapon"
+    risk_weight: 0.9
+    description: "Sharp weapon — common violence trigger"
+
+  - name: "scissors"
+    category: "weapon"
+    risk_weight: 0.6
+    description: "Sharp object — mild trigger"
+
+  # Vehicles — Accident/trauma triggers
+  - name: "car"
+    category: "vehicle"
+    risk_weight: 0.4
+    description: "Vehicle — accident trauma trigger"
+
+  - name: "truck"
+    category: "vehicle"
+    risk_weight: 0.5
+    description: "Large vehicle — accident trauma trigger"
+
+  - name: "bus"
+    category: "vehicle"
+    risk_weight: 0.4
+    description: "Public transport — can trigger crowd anxiety"
+
+  - name: "motorcycle"
+    category: "vehicle"
+    risk_weight: 0.3
+    description: "Motorcycle — accident association"
+
+  # Emergency / Military
+  - name: "fire hydrant"
+    category: "emergency"
+    risk_weight: 0.3
+    description: "Emergency scene association"
+
+  # Animals (some can trigger fear)
+  - name: "dog"
+    category: "animal"
+    risk_weight: 0.3
+    description: "Dogs can trigger fear in some patients"
+
+# ============================================================
+# CROWD DETECTION
+# ============================================================
+crowd_detection:
+  enabled: true
+  # If this many or more people detected → crowd trigger
+  person_threshold: 5
+  risk_weight: 0.7
+  description: "Crowded scenes can trigger anxiety and panic"
+
+# ============================================================
+# SAFE OBJECTS — Objects that indicate safe environment
+# ============================================================
+safe_objects:
+  - name: "teddy bear"
+    calm_weight: 0.3
+  - name: "book"
+    calm_weight: 0.2
+  - name: "potted plant"
+    calm_weight: 0.2
