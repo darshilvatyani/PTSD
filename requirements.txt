@@ -6,14 +6,14 @@ Pillow>=10.0.0
 
 # Emotion Detection (Pre-trained)
 deepface>=0.0.89
-tf-keras>=2.16.0
+tf-keras>=2.16.0,<2.17.0
 
 # Object Detection (Pre-trained YOLOv8)
 ultralytics>=8.1.0
 
 # Audio Classification (Google YAMNet)
-tensorflow>=2.15.0
-tensorflow-hub>=0.16.0
+tensorflow>=2.15.0,<2.17.0
+tensorflow-hub>=0.16.0,<0.17.0
 scipy>=1.11.0
 librosa>=0.10.0
 
